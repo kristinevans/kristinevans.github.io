@@ -7,7 +7,10 @@ share-title: Kristin Evans | Contact Me
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>enableSubmitContact = function(){ document.getElementById("submit_contact").disabled = false; }</script>
 
-If you have any questions, you can email pchaganti+kristin.evans@gmail.com or send a message using the form below.
+<div class="row">
+
+If you have any questions, please email pchaganti+kristin.evans@gmail.com or send a message using the form below.
+<br><br>
 
 <form action="https://submit-form.com/sV7y563V" class="form" id="contact-form">
   <div class="row">
@@ -21,7 +24,7 @@ If you have any questions, you can email pchaganti+kristin.evans@gmail.com or se
   <textarea type="text" name="content" class="form-control input-lg" placeholder="Message" title="Message" required="required" rows="3"></textarea>
 
   <div class="g-recaptcha" data-sitekey="6Levj9waAAAAAKjnDWEPUfENn91YBRofBG7VxCUP" data-callback="enableSubmitContact"></div>
-  <input type="hidden" name="_feedback.success.title" value="Thanks for contacting AttaliTech, we'll be in touch shortly!" />
+  <input type="hidden" name="_feedback.success.title" value="Thanks for contacting Kristin Evans, I will be in touch shortly!" />
   <input type="hidden" name="_email.from" value="Kristin Help Website" />
   <input type="hidden" name="_feedback.error.title" value="An error occurred (did you check the &quot;I'm not a robot&quot; box?)" />
 
@@ -30,3 +33,5 @@ If you have any questions, you can email pchaganti+kristin.evans@gmail.com or se
 </form>
 
 Contacting me online is the best way to get in touch, but you can also reach me by phone at <a href="tel:6786291802" title="Phone">(678) 629-1802</a>.
+
+</div>
