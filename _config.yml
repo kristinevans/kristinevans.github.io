@@ -21,10 +21,9 @@ author: Kristin Evans
 
 navbar-links:
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://kristinevans.github.io"
+  Services: "services"
+  Schedule: "schedule"
+  Contact: "contact"
 
 ################
 # --- Logo --- #
@@ -82,7 +81,6 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: This website is a virtual proof that I'm awesome
 
 ###########################
 # --- General options --- #
@@ -266,11 +264,10 @@ defaults:
   -
     scope:
       path: ""
-      type: "posts"
     values:
-      layout: "post"
-      comments: true  # add comments to all blog posts
-      social-share: true # add social media sharing buttons to all blog posts
+      layout: "page"
+      nav-short: true
+      share-description: "Georgia Tech, Class of 2028"
   -
     scope:
       path: "" # any file that's not a post will be a "page" layout by default
