@@ -4,41 +4,55 @@ layout: base
 
 {% include header.html type="page" %}
 
-<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
+<main
+  class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}"
+>
   <div class="row">
-    <div class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}">
+    <div
+      class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}"
+    >
       {% if page.before-content %}
-        <div class="before-content">
-          {% for file in page.before-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
+      <div class="before-content">
+        {% for file in page.before-content %} {% include {{ file }} %} {% endfor
+        %}
+      </div>
       {% endif %}
 
       <div>
-        I found my passion for chemistry and math during my high school years, and since then they have made such a positive impact on the trajectory of my life. That is why it has become my goal to help others learn and succeed in these tricky subjects. 
--Qualifications:
-	-Georgia Tech Student
-		-majoring in Chemical and biochemical engineering
-	-A+ in honors and AP Chem
-	-5 on AP Chem, AP World History, AP US History, and AP Biology exams
-	-Chemistry teacher’s assistant (2 years)
-	-3 years tutoring experience 
-	->4.0 GPA
-	
--About the services:
-Here at Kristin’s Help, I offer a wide range of services and resources to help your student excel in their academic career. I offer private tutoring for any level of chemistry, algebra 1, algebra 2, and pre-calculus. Additionally, I offer digital notes for select AP classes (AP World History, AP US History, and AP Biology). These notes are broken into the College Board units, and they can be purchased as individual units or as a single course review. 
-
+        I found my passion for chemistry and math during my high school years,
+        and since then they have made such a positive impact on the trajectory
+        of my life. That is why it has become my goal to help others learn and
+        succeed in these tricky subjects.
+        <br /><br />
+        <ul>
+          <li>
+            Georgia Tech Student majoring in Chemical and biochemical
+            engineering
+          </li>
+          <li>A+ in honors and AP Chem</li>
+          <li>
+            5 on AP Chem, AP World History, AP US History, and AP Biology exams
+          </li>
+          <li>Chemistry teacher’s assistant (2 years)</li>
+          <li>3 years tutoring experience</li>
+          <li>4.0 GPA</li>
+        </ul>
+        <br /><br /><br/>
+        Here at Kristin’s Help, I offer a wide range of services and resources
+        to help your student excel in their academic career. I offer private
+        tutoring for any level of chemistry, algebra 1, algebra 2, and
+        pre-calculus. Additionally, I offer digital notes for select AP classes
+        (AP World History, AP US History, and AP Biology). These notes are
+        broken into the College Board units, and they can be purchased as
+        individual units or as a single course review.
       </div>
 
       {% if page.after-content %}
-        <div class="after-content">
-          {% for file in page.after-content %}
-            {% include {{ file }} %}
-          {% endfor %}
-        </div>
+      <div class="after-content">
+        {% for file in page.after-content %} {% include {{ file }} %} {% endfor
+        %}
+      </div>
       {% endif %}
-
     </div>
   </div>
 </main>
