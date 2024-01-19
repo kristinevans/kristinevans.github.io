@@ -1,0 +1,117 @@
+---
+layout: base
+---
+
+{% include header.html type="page" %}
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+  enableSubmitContact = function () {
+    document.getElementById("submit_contact").disabled = false;
+  };
+</script>
+
+<main
+  class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}"
+>
+  <div class="row">
+    <div
+      class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}"
+    >
+      {% if page.before-content %}
+      <div class="before-content">
+        {% for file in page.before-content %} {% include {{ file }} %} {% endfor
+        %}
+      </div>
+      {% endif %}
+
+      <div>
+        <br /><br />
+        If you have any questions, please email
+        pchaganti+kristin.evans@gmail.com or send a message using the form
+        below.
+        <br /><br />
+        <form
+          action="https://submit-form.com/sV7y563V"
+          class="form"
+          id="contact-form"
+        >
+          <div class="row">
+            <div class="col-6">
+              <input
+                type="email"
+                name="email"
+                required="required"
+                class="form-control input-lg"
+                placeholder="Email"
+                title="Email"
+                style="margin-bottom: 15px"
+              />
+            </div>
+            <div class="col-6">
+              <input
+                type="text"
+                name="name"
+                class="form-control input-lg"
+                placeholder="Name"
+                title="Name"
+                style="margin-bottom: 15px"
+              />
+            </div>
+          </div>
+          <textarea
+            type="text"
+            name="content"
+            class="form-control input-lg"
+            placeholder="Message"
+            title="Message"
+            required="required"
+            rows="3"
+          ></textarea>
+
+          <div
+            class="g-recaptcha"
+            data-sitekey="6Levj9waAAAAAKjnDWEPUfENn91YBRofBG7VxCUP"
+            data-callback="enableSubmitContact"
+          ></div>
+          <input
+            type="hidden"
+            name="_feedback.success.title"
+            value="Thanks for contacting Kristin Evans, I will be in touch shortly!"
+          />
+          <input
+            type="hidden"
+            name="_email.from"
+            value="Kristin Help Website"
+          />
+          <input
+            type="hidden"
+            name="_feedback.error.title"
+            value='An error occurred (did you check the "I&apos;m not a robot" box?)'
+          />
+
+          <br />
+          <button
+            id="submit_contact"
+            type="submit"
+            class="btn btn-lg btn-primary"
+            disabled
+          >
+            Submit
+          </button>
+        </form>
+        <br /><br />
+        Contacting me online is the best way to get in touch, but you can also
+        reach me by phone at
+        <a href="tel:6786291802" title="Phone">(678) 629-1802</a>.
+      </div>
+
+      {% if page.after-content %}
+      <div class="after-content">
+        {% for file in page.after-content %} {% include {{ file }} %} {% endfor
+        %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</main>

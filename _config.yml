@@ -21,8 +21,8 @@ author: Kristin Evans
 
 navbar-links:
   Services: "services"
-  Schedule: "schedule"
-  Contact: "contact"
+  Schedule meeting: "schedule"
+  Contact me: "contact"
 
 ################
 # --- Logo --- #
