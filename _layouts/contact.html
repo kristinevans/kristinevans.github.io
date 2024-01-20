@@ -29,11 +29,7 @@ layout: base
         <br />
         If you have any questions, send a message using the form below.
         <br /><br />
-        <form
-          action="https://submit-form.com/sV7y563V"
-          class="form"
-          id="contact-form"
-        >
+        <form action="https://formspree.io/f/xqkrezag" method="POST">
           <div class="row">
             <div class="col-6">
               <input
@@ -47,57 +43,23 @@ layout: base
               />
             </div>
             <div class="col-6">
-              <input
+              <textarea
                 type="text"
-                name="name"
+                name="content"
                 class="form-control input-lg"
-                placeholder="Name"
-                title="Name"
-                style="margin-bottom: 15px"
-              />
+                placeholder="Message"
+                title="Message"
+                required="required"
+                rows="3"
+              ></textarea>
             </div>
           </div>
-          <textarea
-            type="text"
-            name="content"
-            class="form-control input-lg"
-            placeholder="Message"
-            title="Message"
-            required="required"
-            rows="3"
-          ></textarea>
-
-          <div
-            class="g-recaptcha"
-            data-sitekey="6Levj9waAAAAAKjnDWEPUfENn91YBRofBG7VxCUP"
-            data-callback="enableSubmitContact"
-          ></div>
-          <input
-            type="hidden"
-            name="_feedback.success.title"
-            value="Thanks for contacting Kristin Evans, I will be in touch shortly!"
-          />
-          <input
-            type="hidden"
-            name="_email.from"
-            value="Kristin Help Website"
-          />
-          <input
-            type="hidden"
-            name="_feedback.error.title"
-            value='An error occurred (did you check the "I&apos;m not a robot" box?)'
-          />
 
           <br />
-          <button
-            id="submit_contact"
-            type="submit"
-            class="btn btn-lg btn-primary"
-            disabled
-          >
-            Submit
-          </button>
+
+          <button type="submit" class="btn btn-lg btn-primary">Send</button>
         </form>
+
         <br /><br />
         Contacting me online is the best way to get in touch, but you can also
         reach me by phone at
