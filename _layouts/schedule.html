@@ -1,0 +1,51 @@
+---
+layout: base
+---
+
+{% include header.html type="page" %}
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+  enableSubmitContact = function () {
+    document.getElementById("submit_contact").disabled = false;
+  };
+</script>
+
+<main
+  class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}"
+>
+  <div class="row">
+    <div
+      class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}"
+    >
+      {% if page.before-content %}
+      <div class="before-content">
+        {% for file in page.before-content %} {% include {{ file }} %} {% endfor
+        %}
+      </div>
+      {% endif %}
+
+      <div>
+        <br />
+        You can also schedule a meeting on my calendar below.
+        <br /><br />
+        <div style="text-align: center">
+          <a
+            href="https://calendly.com/attalitech/meeting"
+            class="schedule-btn actionbtn"
+          >
+            <span class="far fa-calendar-check" aria-hidden="true"></span>
+            Schedule Meeting
+          </a>
+        </div>
+      </div>
+
+      {% if page.after-content %}
+      <div class="after-content">
+        {% for file in page.after-content %} {% include {{ file }} %} {% endfor
+        %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</main>
