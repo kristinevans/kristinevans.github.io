@@ -1,0 +1,84 @@
+---
+layout: base
+---
+
+{% include header.html type="page" %}
+
+<main
+  class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}"
+>
+  <div class="row">
+    <div
+      class="{% if page.full-width %} col {% else %} col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 {% endif %}"
+    >
+      {% if page.before-content %}
+      <div class="before-content">
+        {% for file in page.before-content %} {% include {{ file }} %} {% endfor
+        %}
+      </div>
+      {% endif %}
+
+      <div>
+        <br /><br />
+        <ul>
+          <li>
+            Private Tutoring for various classes
+            <ul>
+              <li>
+                AP Chemistry, Honors Chemistry, ASP, On-level Chemistry, Algebra
+                1, Algebra 2, and Pre-calculus
+              </li>
+            </ul>
+          </li>
+          <li>
+            In-person
+            <ul>
+              <li>
+                Location: OCEE library Starbucks off of Medlock (Starbucks,
+                11720 Medlock Bridge Rd, Johns Creek, GA 30097), or Starbucks
+                off of Old Milton (Starbucks, 4180-4190 Old Milton Pkwy,
+                Alpharetta, GA 30005)
+              </li>
+            </ul>
+          </li>
+          <li>
+            Virtual
+            <ul>
+              <li>I will send the client a link via GoogleMeet</li>
+            </ul>
+          </li>
+          <li>
+            Pricing: Both Virtual and In-Person tutoring are 35$/hour. Payments
+            can be made via check, cash, or Venmo
+          </li>
+        </ul>
+        <br /><br />
+        <ul>
+          <li>
+            AP Notes/Resources
+            <ul>
+              <li>AP World History</li>
+              <li>AP US History</li>
+              <li>AP Biology</li>
+            </ul>
+          </li>
+          <li>
+            Pricing for Notes
+            <ul>
+              <li>1 Unit: $15</li>
+              <li>1 Course (all units): $90</li>
+              <li>AP Biology</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      {% if page.after-content %}
+      <div class="after-content">
+        {% for file in page.after-content %} {% include {{ file }} %} {% endfor
+        %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</main>
