@@ -4,11 +4,42 @@ layout: base
 
 {% include header.html type="page" %}
 
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script>
-  enableSubmitContact = function () {
-    document.getElementById("submit_contact").disabled = false;
-  };
+  var form = document.getElementById("my-form");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    var status = document.getElementById("my-form-status");
+    var data = new FormData(event.target);
+    fetch(event.target.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          status.innerHTML = "Message sent!";
+          form.reset();
+        } else {
+          response.json().then((data) => {
+            if (Object.hasOwn(data, "errors")) {
+              status.innerHTML = data["errors"]
+                .map((error) => error["message"])
+                .join(", ");
+            } else {
+              status.innerHTML =
+                "Oops! There was a problem submitting your message";
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        status.innerHTML = "Oops! There was a problem submitting your message";
+      });
+  }
+  form.addEventListener("submit", handleSubmit);
 </script>
 
 <main
@@ -28,7 +59,12 @@ layout: base
       <div>
         If you have any questions, send a message using the form below.
         <br /><br />
-        <form action="https://formspree.io/f/xqkrezag" method="POST">
+
+        <form
+          id="my-form"
+          action="https://formspree.io/f/xqkrezag"
+          method="POST"
+        >
           <div class="row">
             <div class="col-6">
               <input
@@ -59,8 +95,8 @@ layout: base
           <br />
 
           <button type="submit" class="btn btn-lg btn-primary">Send</button>
+          <p id="my-form-status"></p>
         </form>
-
         <br /><br />
         Contacting me online is the best way to get in touch, but you can also
         reach me by phone at
