@@ -4,7 +4,6 @@ layout: base
 
 {% include header.html type="page" %}
 
-
 <main
   class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}"
 >
@@ -58,7 +57,16 @@ layout: base
           <br />
 
           <button type="submit" class="btn btn-lg btn-primary">Send</button>
-          <p id="my-form-status"></p>
+          <p
+            id="my-form-status"
+            style="
+              font-size: 1.5rem;
+              color: green;
+              border: 1px solid #ccc;
+              text-align: center;
+              padding: 10px;
+            "
+          ></p>
         </form>
         <br /><br />
         Contacting me online is the best way to get in touch, but you can also

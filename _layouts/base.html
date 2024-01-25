@@ -44,7 +44,7 @@ common-js:
       })
         .then((response) => {
           if (response.ok) {
-            status.innerHTML = "Message sent!";
+            status.innerHTML = "Your message sent to Kristin!";
             form.reset();
           } else {
             response.json().then((data) => {
