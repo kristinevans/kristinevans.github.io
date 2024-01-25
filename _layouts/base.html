@@ -21,19 +21,49 @@ common-js:
 
 <!DOCTYPE html>
 <html lang="{{ page.language | default: site.language | default: 'en' }}">
-<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
-{% include head.html %}
+  <!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
+  {% include head.html %}
 
-<body>
-  {% include gtm_body.html %}
+  <body>
+    {% include gtm_body.html %} {% include nav.html %} {{ content }} {% include
+    footer.html %} {% include footer-scripts.html %}
+  </body>
+  <script>
+    var form = document.getElementById("my-form");
 
-  {% include nav.html %}
-
-  {{ content }}
-
-  {% include footer.html %}
-
-  {% include footer-scripts.html %}
-
-</body>
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      })
+        .then((response) => {
+          if (response.ok) {
+            status.innerHTML = "Message sent!";
+            form.reset();
+          } else {
+            response.json().then((data) => {
+              if (Object.hasOwn(data, "errors")) {
+                status.innerHTML = data["errors"]
+                  .map((error) => error["message"])
+                  .join(", ");
+              } else {
+                status.innerHTML =
+                  "Oops! There was a problem submitting your message";
+              }
+            });
+          }
+        })
+        .catch((error) => {
+          status.innerHTML =
+            "Oops! There was a problem submitting your message";
+        });
+    }
+    form.addEventListener("submit", handleSubmit);
+  </script>
 </html>
